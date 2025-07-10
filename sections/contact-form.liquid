@@ -109,12 +109,12 @@
           type="tel"
           id="ContactForm-country"
           class="field__input"
-          autocomplete="tel"
+          autocomplete="country"
           name="country"
-          value="{% if form.phone %}{{ form.phone }}{% elsif customer %}{{ customer.phone }}{% endif %}"
+          value="{% if form.country %}{{ form.country }}{% elsif customer %}{{ customer.country }}{% endif %}"
           placeholder="{{ 'templates.contact.form.phone' | t }}"
         >
-        <label class="field__label" for="ContactForm-phone">country</label>
+        <label class="field__label" for="ContactForm-country">country</label>
       </div>
       <div class="field">
         <textarea
