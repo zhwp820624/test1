@@ -52,6 +52,48 @@
   aria-label="{{ 'products.product.media.gallery_viewer' | t }}"
   data-desktop-layout="{{ section.settings.gallery_layout }}"
 >
+  
+  <style>
+    .breadcrumbs {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: var(--breadcrumbs-alignment);
+    }
+    .breadcrumbs * {
+      color: rgb(var(--color-foreground)) !important;
+    }
+    .breadcrumbs li {
+      display: inline-flex;
+      align-items: center;
+    }
+    .breadcrumbs li a {
+      text-decoration: none;
+    }
+    .breadcrumbs li a:not(.line_none):hover {
+      text-decoration: underline;
+    }
+</style>
+<div class="breadcrumbs">
+  <li>
+    <a href="/" target="_blank">Home /&nbsp;</a>
+  </li>
+  {% unless product.metafields.multiple.breadcrumbs.value == blank %}
+    {% for clt in product.metafields.multiple.breadcrumbs.value %}
+      <li>
+        <a href="{{ clt.url }}" target="_blank">{{ clt.title }}</a>{% unless forloop.last %}&nbsp;/&nbsp;{% endunless %}
+      </li>
+    {% endfor %}
+    {% else %} 
+    <li>
+      <a href="/collections/{{ product.collections.first.handle }}" target="_blank">{{ product.collections.first.title }} /&nbsp;</a>
+      <a href="#" class="line_none">{{ product.title }}</a>
+    </li>
+  {% endunless %}
+</div>
+
   <div id="GalleryStatus-{{ section.id }}" class="visually-hidden" role="status"></div>
   <slider-component id="GalleryViewer-{{ section.id }}{{ id_append }}" class="slider-mobile-gutter">
     {%- unless is_duplicate -%}
@@ -88,8 +130,9 @@
           %}
         </li>
       {%- endif -%}
+      
       {%- for media in product.media -%}
-        {{ product }}
+       
         {%- unless media.id == product.selected_or_first_available_variant.featured_media.id -%}
           <li
             id="Slide-{{ section.id }}-{{ media.id }}{{ id_append }}"
