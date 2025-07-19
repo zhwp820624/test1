@@ -1,0 +1,211 @@
+<div class="shopify-section-{{ section.id }} container">
+    {% assign counter = 0 %}
+    {% for block in section.blocks %}
+        <div class="step-item">
+            {% assign _settings = block.settings %}
+            <div class="step-img-box {{ _settings.image_position }}">
+                <img
+                        width="auto"
+                        height="auto"
+                        style="width: {{ _settings.image_width }}%;"
+                        src="{{ _settings.step_image | image_url }}"
+                />
+            </div>
+            <div class="step-text-box">
+                {% assign counter = counter | plus: 1 %}
+                <p class="step-number">0{{ counter }}</p>
+                <h3 class="step-heading">
+                    {{ _settings.step_title }}
+                </h3>
+                <p class="step-content">
+                    {{ _settings.step_content }}
+                </p>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+{% schema %}
+{
+  "name": "Next setp",
+  "limit": 1,
+  "max_blocks": 3,
+  "blocks": [
+    {
+      "name": "Step",
+      "type": "step",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "step_image",
+          "label": "step image"
+        },
+        {
+          "type": "range",
+          "id": "image_width",
+          "min": 25,
+          "max": 100,
+          "step": 1,
+          "unit": "%",
+          "label": "image width %",
+          "default": 35
+        },
+        {
+          "type": "radio",
+          "id": "image_position",
+          "label": "image position",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ],
+          "default": "left"
+        },
+        {
+          "type": "text",
+          "id": "step_title",
+          "label": "step title"
+        },
+        {
+          "type": "textarea",
+          "id": "step_content",
+          "label": "step content"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "food step"
+    }
+  ]
+}
+{% endschema %}
+
+{% style %}
+    .shopify-section-{{ section.id }} {
+    display: flex;
+    flex-direction: column;
+    gap: 90px;
+    padding: 40px 32px;
+    }
+
+    .shopify-section-{{ section.id }} .step-item {
+    display: flex;
+    align-items: center;
+    gap: 64px;
+    }
+
+    .shopify-section-{{ section.id }} .step-item div{
+    flex: 1;
+    }
+
+    .shopify-section-{{ section.id }} .step-number{
+    font-size: 86px;
+    font-weight: 600;
+    color: #ddd;
+    margin-bottom: 12px;
+    }
+
+    .shopify-section-{{ section.id }} .step-heading{
+    font-size: 30px;
+    color: #333;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+    margin-bottom: 32px;
+    }
+
+    .shopify-section-{{ section.id }} .step-content{
+    font-size: 18px;
+    line-height: 1.8;
+    }
+
+    .shopify-section-{{ section.id }} .step-img-box{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+
+    .shopify-section-{{ section.id }} .step-img-box.right{
+    order: 2;
+    }
+
+    .shopify-section-{{ section.id }} .step-img-box::after{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+
+    .shopify-section-{{ section.id }} .step-img-box::after, .step-img-box::before {
+    content: "";
+    display: block;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    }
+
+    .shopify-section-{{ section.id }} .step-img-box::before{
+    width: 60%;
+    padding-bottom: 60%;
+    background-color: #fdf2e9;
+    z-index: -2;
+    }
+
+    .shopify-section-{{ section.id }} .step-img-box::after{
+    width: 45%;
+    padding-bottom: 45%;
+    background-color: #fae5d3;
+    z-index: -1;
+    }
+
+    @media (max-width: 75em) {
+    .shopify-section-{{ section.id }} .step-heading {
+    font-size: 22px;
+    }
+
+    .shopify-section-{{ section.id }} .step-content {
+    font-size: 16px;
+    line-height: 1.6;
+    }
+
+    .shopify-section-{{ section.id }} .step-item {
+    gap: 32px;
+    }
+    }
+    @media (max-width: 48em) {
+    .shopify-section-{{ section.id }} .step-content {
+    font-size: 14px;
+    line-height: 1.6;
+    }
+
+    .shopify-section-{{ section.id }} .step-heading {
+    font-size: 18px;
+    }
+
+    .shopify-section-{{ section.id }} .step-number {
+    font-size: 60px;
+    }
+
+    .shopify-section-{{ section.id }} .step-item {
+    flex-direction: column;
+    flex: auto;
+    }
+
+    .shopify-section-{{ section.id }} .step-item .step-img-box {
+    order: 1;
+    }
+
+    .shopify-section-{{ section.id }} .step-item .step-text-box {
+    order: 2;
+    }
+    }
+{% endstyle %}
