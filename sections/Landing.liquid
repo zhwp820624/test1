@@ -87,7 +87,7 @@
               {%- if block.settings.text -%}
                 <div class="image-with-text__text rte {{ section.settings.text_style }}">{{ block.settings.text }}</div>
               {%- endif -%}
-              <div style="display: flex; gap: 40px;">
+              <div style="display: flex; gap: 40px; justify-content: center;">
               {%- if block.settings.button_label != blank -%}
                 <a
                   {% if block.settings.button_link == blank %}
