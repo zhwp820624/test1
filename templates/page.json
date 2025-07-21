@@ -80,10 +80,22 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "contact_form_L3NQ6U": {
+      "type": "contact-form",
+      "name": "t:sections.contact-form.presets.name",
+      "settings": {
+        "heading": "Contact form",
+        "heading_size": "h1",
+        "color_scheme": "background-1",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
     "main",
-    "landing_rrHgBC"
+    "landing_rrHgBC",
+    "contact_form_L3NQ6U"
   ]
 }
