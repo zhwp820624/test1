@@ -87,6 +87,7 @@
               {%- if block.settings.text -%}
                 <div class="image-with-text__text rte {{ section.settings.text_style }}">{{ block.settings.text }}</div>
               {%- endif -%}
+              <div style="display: flex; gap: 40px;">
               {%- if block.settings.button_label != blank -%}
                 <a
                   {% if block.settings.button_link == blank %}
@@ -112,6 +113,7 @@
                   {{ block.settings.button_whatsapp_label | escape }}
                 </a>
               {%- endif -%}
+              </div>
             </div>
           </div>
         </div>
