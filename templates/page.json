@@ -22,6 +22,7 @@
         "row_RNjqim": {
           "type": "row",
           "settings": {
+            "image": "shopify://shop_images/Main_b13ad453-477c-4ed1-9b43-81f3345adfd6.jpg",
             "caption": "Caption",
             "heading": "Row",
             "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
@@ -34,6 +35,7 @@
         "row_PEQMxH": {
           "type": "row",
           "settings": {
+            "image": "shopify://shop_images/Main_d624f226-0a89-4fe1-b333-0d1548b43c06.jpg",
             "caption": "Caption",
             "heading": "Row",
             "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
@@ -46,6 +48,7 @@
         "row_t3bYWN": {
           "type": "row",
           "settings": {
+            "image": "shopify://shop_images/snowboard_sky.png",
             "caption": "Caption",
             "heading": "Row",
             "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
