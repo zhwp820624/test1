@@ -80,7 +80,7 @@
     }
 {%- endstyle -%}
 {%- for prd in section.blocks -%}
-
+    {{ prd | json }}
     <div class="container">
         {%- if prd.prd_img -%}
             <div class="image-section">
@@ -120,7 +120,7 @@
               "label": "产品图片"
             },
             {
-              "type": "textarea",
+              "type": "inline_richtext",
               "id": "prd_desc",
               "label": "产品描述"
             },
