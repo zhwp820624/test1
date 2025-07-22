@@ -1,0 +1,107 @@
+{%- style -%}
+    .container {
+    display: flex;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+    max-width: 1000px;
+    height: 500px;
+    margin: 0 auto;
+    }
+    .image-section {
+    width: 50%;
+    background-color: #eef2f5;
+    }
+
+    .image-section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    }
+
+    .content-section {
+    width: 50%;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    }
+
+    .content-section h2 {
+    color: #007f5f;
+    margin: 0 0 10px;
+    }
+
+    .content-section ul {
+    padding-left: 20px;
+    margin: 10px 0 20px;
+    }
+
+    .content-section li {
+    margin-bottom: 10px;
+    }
+
+    .buttons {
+    margin-top: 10px;
+    }
+
+    .buttons a {
+    display: inline-block;
+    padding: 8px 16px;
+    margin-right: 10px;
+    text-decoration: none;
+    color: white;
+    background-color: #007f5f;
+    border-radius: 4px;
+    font-size: 14px;
+    }
+
+    .buttons a.whatsapp {
+    background-color: #25d366;
+    }
+
+    /* 可选：在小屏幕下堆叠布局 */
+    @media (max-width: 768px) {
+    .container {
+    flex-direction: column;
+    height: auto;
+    }
+
+    .image-section,
+    .content-section {
+    width: 100%;
+    height: auto;
+    }
+
+    .image-section img {
+    height: auto;
+    }
+{%- endstyle -%}
+{%- for prd in section.settings.prd_list -%}
+
+    <div class="container">
+        {%- if prd.prd_img -%}
+            <div class="image-section">
+                <img src="{{ prd.prd_img | img_url: 'master' }}" alt="Image">
+            </div>
+
+        {%- endif -%}
+    </div>
+{%- endfor -%}
+{% schema %}
+    {
+    "name": "Landing  Product",
+    "settings": [
+        {
+            "type": "product_list",
+            "id": "prd_list",
+            "label": "商品列表",
+            "limit": 1
+        }
+    ]
+    }
+    {% endschema %}
+
+
