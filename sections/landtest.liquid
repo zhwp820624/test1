@@ -86,21 +86,56 @@
             <div class="image-section">
                 <img src="{{ prd.prd_img | img_url: 'master' }}" alt="Image">
             </div>
-
+            <div class="content-section">
+                <h2>{{ prd.prd_name }}</h2>
+                <p>{{ prd.prd_desc }}</p>
+            </div>
+            <div class="buttons">
+                <a href="{{ prd.prd_url }}" target="_blank">DETAIL</a>
+                <a href="{{ prd.prd_url }}" target="_blank" class="whatsapp">WhatsApp</a>
+            </div>
         {%- endif -%}
     </div>
 {%- endfor -%}
 {% schema %}
     {
     "name": "落地页产品列表",
-    "settings": [
+    "class": "section",
+    "disabled_on": {
+       "groups": ["header", "footer"]
+    },
+      "block": [
         {
-            "type": "product_list",
-            "id": "prd_list",
-            "label": "商品列表",
-            "limit": 1
+          "name": "产品",
+          "settings": [
+            {
+              "type": "text",
+              "id": "prd_name",
+              "label": "产品名称"
+            },
+            {
+              "type": "image_picker",
+              "id": "prd_img",
+              "label": "产品图片"
+            },
+            {
+              "type": "textarea",
+              "id": "prd_desc",
+              "label": "产品描述"
+            },
+            {
+              "type": "text",
+              "id": "prd_url",
+              "label": "产品链接"
+            },
+            {
+              "type": "text",
+              "id": "store_whatsapp_id",
+              "label": "whatsapp ID"
+            }
+          ]
         }
-    ],
+      ],
       "presets": [
         {
           "name": "落地页产品列表"
