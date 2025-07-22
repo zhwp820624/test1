@@ -80,7 +80,7 @@
     }
 {%- endstyle -%}
 {%- for prd in section.blocks -%}
-    {{ prd | json }}
+    {{ section.blocks | json }}
     <div class="container">
         {%- if prd.prd_img -%}
             <div class="image-section">
