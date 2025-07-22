@@ -64,6 +64,7 @@
         "row_PEQMxH",
         "row_t3bYWN"
       ],
+      "disabled": true,
       "name": "多行图片+文本",
       "settings": {
         "image_height": "medium",
@@ -83,6 +84,7 @@
     },
     "contact_form_GWadyk": {
       "type": "contact-form",
+      "disabled": true,
       "name": "t:sections.contact-form.presets.name",
       "settings": {
         "heading": "Contact Us",
@@ -100,7 +102,7 @@
           "settings": {
             "prd_name": "test",
             "prd_img": "shopify://shop_images/Main_0a4e9096-021a-4c1e-8750-24b233166a12.jpg",
-            "prd_desc": "30-99pcs : $1.2 / 100-499pcs : $1.15 / 500-999pcs : $0=1.1 / >= 1000pcs : $0.98\nDurable ABS structure, total weight only 0.05kg\n2.36\" suction basewith vivid feathered bird\nLow MOQ, factory pricing, support free sample and fast delivery\n100% inspection before shipping goods",
+            "prd_desc": "30-99pcs : $1.2 / 100-499pcs : $1.15 / 500-999pcs : $0=1.1 / >= 1000pcs : $0.98Durable ABS structure, total weight only 0.05kg2.36\" suction basewith vivid feathered birdLow MOQ, factory pricing, support free sample and fast delivery100% inspection before shipping goods",
             "prd_url": "/products/the-collection-snowboard-liquid",
             "store_whatsapp_id": "8613728936141"
           }
