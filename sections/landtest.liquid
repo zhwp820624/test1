@@ -82,17 +82,17 @@
 {%- for prd in section.blocks -%}
     {{ section.blocks }}{{ prd }}
     <div class="container">
-        {%- if prd.setting.prd_img != blank -%}
+        {%- if prd.settings.prd_img != blank -%}
             <div class="image-section">
-                <img src="{{ prd.setting.prd_img | img_url: 'master' }}" alt="Image">
+                <img src="{{ prd.settings.prd_img | img_url: 'master' }}" alt="Image">
             </div>
             <div class="content-section">
-                <h2>{{ prd.setting.prd_name }}</h2>
-                <p>{{ prd.setting.prd_desc }}</p>
+                <h2>{{ prd.settings.prd_name }}</h2>
+                <p>{{ prd.settings.prd_desc }}</p>
             </div>
             <div class="buttons">
-                <a href="{{ prd.setting.prd_url }}" target="_blank">DETAIL</a>
-                <a href="{{ prd.setting.prd_url }}" target="_blank" class="whatsapp">WhatsApp</a>
+                <a href="{{ prd.settings.prd_url }}" target="_blank">DETAIL</a>
+                <a href="{{ prd.settings.prd_url }}" target="_blank" class="whatsapp">WhatsApp</a>
             </div>
         {%- endif -%}
     </div>
