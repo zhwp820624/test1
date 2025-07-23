@@ -46,14 +46,13 @@
       "custom_css": [],
       "settings": {
         "image": "shopify://shop_images/theme_cover_image.jpg",
-        "image_2": "shopify://shop_images/2149052540.webp",
         "image_overlay_opacity": 40,
         "image_height": "medium",
         "desktop_content_position": "middle-left",
         "show_text_box": true,
         "desktop_content_alignment": "left",
         "color_scheme": "background-1",
-        "image_behavior": "ambient",
+        "image_behavior": "none",
         "mobile_content_alignment": "center",
         "stack_images_on_mobile": true,
         "show_text_below": true
